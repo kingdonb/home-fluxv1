@@ -9,8 +9,8 @@ spec:
     spec:
       chart: okteto-enterprise
       sourceRef:
-        kind: HelmRepository
-        name: okteto
+        kind: GitRepository
+        name: okteto-enterprise
   install: {}
   interval: 1m0s
   targetNamespace: okteto
