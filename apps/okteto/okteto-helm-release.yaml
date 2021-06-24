@@ -1,0 +1,35 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: okteto-enterprise
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: okteto-enterprise
+      sourceRef:
+        kind: HelmRepository
+        name: okteto
+  install: {}
+  interval: 1m0s
+  targetNamespace: okteto
+  values:
+    email: "kingdon@weave.works"
+    cluster:
+      endpoint: https://10.17.12.146:6443
+    subdomain: diversek8s.dev
+    license:
+    auth:
+      google:
+        enabled: true
+        clientId: 9f1a0d1406bab5bc7337
+        organization: diversek8s
+    cloud:
+      provider:
+        digitalocean:
+          enabled: true
+          region: nyc3
+          space:
+            name: diversek8s-dev-okteto-enterprise
+            accessKeyID: HMG6QSXQBIU5U27VBG4S
