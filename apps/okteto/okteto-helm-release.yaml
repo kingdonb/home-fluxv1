@@ -21,7 +21,7 @@ spec:
     subdomain: diversek8s.dev
     license:
     auth:
-      google:
+      github:
         enabled: true
         clientId: 9f1a0d1406bab5bc7337
         organization: diversek8s
